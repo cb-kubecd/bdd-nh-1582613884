@@ -1,0 +1,148 @@
+
+Showing logs for build [32mcb-kubecd-bdd-nh-1582613884-pr-qwzrk-1[0m stage [32mfrom-build-pack[0m and container [32mstep-credential-initializer-qpjkh[0m
+{"level":"warn","ts":1582615905.9987473,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1582615905.9993925,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+
+Showing logs for build [32mcb-kubecd-bdd-nh-1582613884-pr-qwzrk-1[0m stage [32mfrom-build-pack[0m and container [32mstep-working-dir-initializer-6xcmj[0m
+{"level":"warn","ts":1582615907.053899,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1582615907.0577228,"logger":"fallback-logger","caller":"bash/main.go:64","msg":"Successfully executed command \"sh -c mkdir -p /workspace/source\"; output "}
+
+Showing logs for build [32mcb-kubecd-bdd-nh-1582613884-pr-qwzrk-1[0m stage [32mfrom-build-pack[0m and container [32mstep-place-tools[0m
+
+Showing logs for build [32mcb-kubecd-bdd-nh-1582613884-pr-qwzrk-1[0m stage [32mfrom-build-pack[0m and container [32mstep-git-source-cb-kubecd-bdd-nh-1582613884-pr-qwzrk-8nncb[0m
+{"level":"warn","ts":1582615913.2724018,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1582615914.3619177,"logger":"fallback-logger","caller":"git/git.go:103","msg":"Successfully cloned https://github.com/cb-kubecd/bdd-nh-1582613884.git @ master in path /workspace/source"}
+
+Showing logs for build [32mcb-kubecd-bdd-nh-1582613884-pr-qwzrk-1[0m stage [32mfrom-build-pack[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:a45acaa6e799bd91b36d44663e5ab5e810e48f19,1:f02e172f63f63858a16d8a1310a9dd725c5d6497
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git fetch origin --unshallow f02e172f63f63858a16d8a1310a9dd725c5d6497: a45acaa6e799bd91b36d44663e5ab5e810e48f19:
+DEBUG: ran git fetch --unshallow origin f02e172f63f63858a16d8a1310a9dd725c5d6497: a45acaa6e799bd91b36d44663e5ab5e810e48f19: in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git branch
+DEBUG: JX_LOG_LEVEL=error LC_ALL=C git checkout master
+DEBUG: ran git checkout master in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git reset --hard a45acaa6e799bd91b36d44663e5ab5e810e48f19
+DEBUG: ran git reset --hard a45acaa6e799bd91b36d44663e5ab5e810e48f19 in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git clean -fd .
+DEBUG: ran clean --force -d . in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git merge f02e172f63f63858a16d8a1310a9dd725c5d6497
+DEBUG: ran git merge f02e172f63f63858a16d8a1310a9dd725c5d6497 in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git log --format=%H%x1f%an%x1f%ae%x1f%cn%x1f%ce%x1f%s%n%b%x1e a45acaa6e799bd91b36d44663e5ab5e810e48f19..HEAD
+Merged SHA f02e172f63f63858a16d8a1310a9dd725c5d6497 with commit message 'My first PR commit' into base branch master
+
+Showing logs for build [32mcb-kubecd-bdd-nh-1582613884-pr-qwzrk-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-npmrc[0m
+Command "credential" is deprecated, it will be removed on Jun 1 2020.  This is replaced by Tekton's mounted secrets
+WARNING: failed to find Secret npm-token in namespace **
+
+Showing logs for build [32mcb-kubecd-bdd-nh-1582613884-pr-qwzrk-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-npm-install[0m
+npm notice created a lockfile as package-lock.json. You should commit this file.
+npm WARN REPLACE_ME@1.0.0 No repository field.
+npm WARN REPLACE_ME@1.0.0 No license field.
+
+up to date in 0.472s
+found 0 vulnerabilities
+
+
+Showing logs for build [32mcb-kubecd-bdd-nh-1582613884-pr-qwzrk-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-npm-test[0m
+
+> REPLACE_ME@1.0.0 test /workspace/source
+> echo "no test specified" && exit 0
+
+no test specified
+
+Showing logs for build [32mcb-kubecd-bdd-nh-1582613884-pr-qwzrk-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-container-build[0m
+[36mINFO[0m[0000] Downloading base image node:9-slim           
+ERROR: logging before flag.Parse: E0225 07:31:59.615334      11 metadata.go:159] while reading 'google-dockercfg-url' metadata: http status code: 404 while fetching url http://metadata.google.internal./computeMetadata/v1/instance/attributes/google-dockercfg-url
+ERROR: logging before flag.Parse: E0225 07:31:59.621106      11 metadata.go:142] while reading 'google-dockercfg' metadata: http status code: 404 while fetching url http://metadata.google.internal./computeMetadata/v1/instance/attributes/google-dockercfg
+2020/02/25 07:31:59 No matching credentials were found, falling back on anonymous
+[36mINFO[0m[0001] Error while retrieving image from cache: getting file info: stat /workspace/sha256:0e0175bbe4f8d9d104590d8d2c591017874e30977cb71aaff1cf6fa99479575c: no such file or directory 
+[36mINFO[0m[0001] Downloading base image node:9-slim           
+2020/02/25 07:32:00 No matching credentials were found, falling back on anonymous
+[36mINFO[0m[0002] Executing 0 build triggers                   
+[36mINFO[0m[0002] cmd: EXPOSE                                  
+[36mINFO[0m[0002] Adding exposed port: 8080/tcp                
+[36mINFO[0m[0002] Using files from context: [/workspace/source] 
+[36mINFO[0m[0002] Skipping unpacking as no commands require it. 
+[36mINFO[0m[0002] Taking snapshot of full filesystem...        
+[36mINFO[0m[0002] ENV PORT 8080                                
+[36mINFO[0m[0002] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0002] EXPOSE 8080                                  
+[36mINFO[0m[0002] cmd: EXPOSE                                  
+[36mINFO[0m[0002] Adding exposed port: 8080/tcp                
+[36mINFO[0m[0002] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0002] WORKDIR /usr/src/app                         
+[36mINFO[0m[0002] cmd: workdir                                 
+[36mINFO[0m[0002] Changed working directory to /usr/src/app    
+[36mINFO[0m[0002] Creating directory /usr/src/app              
+[36mINFO[0m[0002] Taking snapshot of files...                  
+[36mINFO[0m[0002] Using files from context: [/workspace/source] 
+[36mINFO[0m[0002] COPY . .                                     
+[36mINFO[0m[0002] Taking snapshot of files...                  
+[36mINFO[0m[0002] CMD ["npm", "start"]                         
+[36mINFO[0m[0002] No files changed in this command, skipping snapshotting. 
+2020/02/25 07:32:02 existing blob: sha256:e01bd28a434b56ffd2a3fe9aa99b9b69aecca69904843edd30b1ee7150d79904
+2020/02/25 07:32:02 existing blob: sha256:196b8e3c919d5639193ba6c6e54774528942041bbc37606631a2250502985c3c
+2020/02/25 07:32:02 existing blob: sha256:7d083412657baa2dafba8d093034ef26f9ed2c90fb6ed95f76bb55aff03ed429
+2020/02/25 07:32:02 existing blob: sha256:5bba3ecb4cd6374a19da45f2a3db0a9c0804984358b3bb4b666c28944016e5ff
+2020/02/25 07:32:02 existing blob: sha256:a88538b9cd05cfa611e43a25582a95ad7879f6fa708b0386a26b71ee62235bb3
+2020/02/25 07:32:05 pushed blob: sha256:92c4b26beefc9b531f7d0dfdc69085abead96c98bf462bfae9a634e5f8124dd4
+2020/02/25 07:32:05 pushed blob: sha256:9c32b678a6a493736ba320def146d2883f71854270336e0d72c0f3336538876d
+2020/02/25 07:32:05 pushed blob: sha256:631d5b27851f432ee99d9281a29f28c30ced35bd291bb8a3400116d257eb16e2
+2020/02/25 07:32:06 gcr.io/jenkins-x-bdd3/bdd-nh-1582613884:0.0.0-SNAPSHOT-PR-1-1: digest: sha256:cfde06f2aa1f366eb12d14fa5aabf37a87fd274f60679ab3218a389ec332c919 size: 1404
+
+Showing logs for build [32mcb-kubecd-bdd-nh-1582613884-pr-qwzrk-1[0m stage [32mfrom-build-pack[0m and container [32mstep-postbuild-post-build[0m
+no CVE provider running in the current ** namespace so skip adding image to be analysed
+
+Showing logs for build [32mcb-kubecd-bdd-nh-1582613884-pr-qwzrk-1[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-make-preview[0m
+sed -i -e "s/version:.*/version: 0.0.0-SNAPSHOT-PR-1-1/" Chart.yaml
+sed -i -e "s/version:.*/version: 0.0.0-SNAPSHOT-PR-1-1/" ../*/Chart.yaml
+sed -i -e "s|repository:.*|repository: gcr.io\/jenkins-x-bdd3\/bdd-nh-1582613884|" values.yaml
+sed -i -e "s/tag:.*/tag: 0.0.0-SNAPSHOT-PR-1-1/" values.yaml
+echo "  version: 0.0.0-SNAPSHOT-PR-1-1" >> requirements.yaml
+** step helm build
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Adding missing Helm repo: storage.googleapis.com https://storage.googleapis.com/chartmuseum.jenkins-x.io
+WARNING: No secrets found on "helm/repos" due: reading the secret "helm/repos" from vault: no secret "helm/repos" not found in vault
+Read credentials for https://storage.googleapis.com/chartmuseum.jenkins-x.io from vault helm/repos
+Successfully added Helm repository storage.googleapis.com.
+Adding missing Helm repo: jenkins-x-chartmuseum http://jenkins-x-chartmuseum:8080
+WARNING: No secrets found on "helm/repos" due: reading the secret "helm/repos" from vault: no secret "helm/repos" not found in vault
+Read credentials for http://jenkins-x-chartmuseum:8080 from vault helm/repos
+Successfully added Helm repository jenkins-x-chartmuseum.
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Adding missing Helm repo: chartmuseum.jenkins-x.io http://chartmuseum.jenkins-x.io
+WARNING: No secrets found on "helm/repos" due: reading the secret "helm/repos" from vault: no secret "helm/repos" not found in vault
+Read credentials for http://chartmuseum.jenkins-x.io from vault helm/repos
+Successfully added Helm repository chartmuseum.jenkins-x.io.
+
+Showing logs for build [32mcb-kubecd-bdd-nh-1582613884-pr-qwzrk-1[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-jx-preview[0m
+Creating a preview
+Created environment cb-kubecd-bdd-nh-1582613884-pr-1
+Namespace **-cb-kubecd-bdd-nh-1582613884-pr-1 created 
+expose:
+  Annotations:
+    helm.sh/hook: post-install,post-upgrade
+    helm.sh/hook-delete-policy: hook-succeeded
+  config:
+    domain: c**d4.bdd.jenkins-x.rocks
+    exposer: Ingress
+    http: "true"
+preview:
+  image:
+    repository: gcr.io/jenkins-x-bdd3/bdd-nh-1582613884
+    tag: 0.0.0-SNAPSHOT-PR-1-1
+
+Updating PipelineActivities cb-kubecd-bdd-nh-1582613884-pr-1-1 which has status Running
+WARNING: preview application http://bdd-nh-1582613884.**-cb-kubecd-bdd-nh-1582613884-pr-1.c**d4.bdd.jenkins-x.rocks not available, error was Get http://bdd-nh-1582613884.**-cb-kubecd-bdd-nh-1582613884-pr-1.c**d4.bdd.jenkins-x.rocks: dial tcp: lookup bdd-nh-1582613884.**-cb-kubecd-bdd-nh-1582613884-pr-1.c**d4.bdd.jenkins-x.rocks on 10.23.240.10:53: no such host, delaying for: 525.193959ms
+WARNING: preview application http://bdd-nh-1582613884.**-cb-kubecd-bdd-nh-1582613884-pr-1.c**d4.bdd.jenkins-x.rocks not available, error was Get http://bdd-nh-1582613884.**-cb-kubecd-bdd-nh-1582613884-pr-1.c**d4.bdd.jenkins-x.rocks: dial tcp: lookup bdd-nh-1582613884.**-cb-kubecd-bdd-nh-1582613884-pr-1.c**d4.bdd.jenkins-x.rocks on 10.23.240.10:53: no such host, delaying for: 1.339876499s
+WARNING: preview application http://bdd-nh-1582613884.**-cb-kubecd-bdd-nh-1582613884-pr-1.c**d4.bdd.jenkins-x.rocks not available, error was Get http://bdd-nh-1582613884.**-cb-kubecd-bdd-nh-1582613884-pr-1.c**d4.bdd.jenkins-x.rocks: dial tcp: lookup bdd-nh-1582613884.**-cb-kubecd-bdd-nh-1582613884-pr-1.c**d4.bdd.jenkins-x.rocks on 10.23.240.10:53: no such host, delaying for: 1.850874036s
+WARNING: preview application http://bdd-nh-1582613884.**-cb-kubecd-bdd-nh-1582613884-pr-1.c**d4.bdd.jenkins-x.rocks not available, error was Get http://bdd-nh-1582613884.**-cb-kubecd-bdd-nh-1582613884-pr-1.c**d4.bdd.jenkins-x.rocks: dial tcp: lookup bdd-nh-1582613884.**-cb-kubecd-bdd-nh-1582613884-pr-1.c**d4.bdd.jenkins-x.rocks on 10.23.240.10:53: no such host, delaying for: 2.933252018s
+WARNING: preview application http://bdd-nh-1582613884.**-cb-kubecd-bdd-nh-1582613884-pr-1.c**d4.bdd.jenkins-x.rocks not available, error was Get http://bdd-nh-1582613884.**-cb-kubecd-bdd-nh-1582613884-pr-1.c**d4.bdd.jenkins-x.rocks: dial tcp: lookup bdd-nh-1582613884.**-cb-kubecd-bdd-nh-1582613884-pr-1.c**d4.bdd.jenkins-x.rocks on 10.23.240.10:53: no such host, delaying for: 2.824501689s
+WARNING: preview application http://bdd-nh-1582613884.**-cb-kubecd-bdd-nh-1582613884-pr-1.c**d4.bdd.jenkins-x.rocks not available, error was Get http://bdd-nh-1582613884.**-cb-kubecd-bdd-nh-1582613884-pr-1.c**d4.bdd.jenkins-x.rocks: dial tcp: lookup bdd-nh-1582613884.**-cb-kubecd-bdd-nh-1582613884-pr-1.c**d4.bdd.jenkins-x.rocks on 10.23.240.10:53: no such host, delaying for: 10.974447712s
+WARNING: preview application http://bdd-nh-1582613884.**-cb-kubecd-bdd-nh-1582613884-pr-1.c**d4.bdd.jenkins-x.rocks not available, error was Get http://bdd-nh-1582613884.**-cb-kubecd-bdd-nh-1582613884-pr-1.c**d4.bdd.jenkins-x.rocks: dial tcp: lookup bdd-nh-1582613884.**-cb-kubecd-bdd-nh-1582613884-pr-1.c**d4.bdd.jenkins-x.rocks on 10.23.240.10:53: no such host, delaying for: 10.256486862s
+WARNING: preview application http://bdd-nh-1582613884.**-cb-kubecd-bdd-nh-1582613884-pr-1.c**d4.bdd.jenkins-x.rocks not available, error was Get http://bdd-nh-1582613884.**-cb-kubecd-bdd-nh-1582613884-pr-1.c**d4.bdd.jenkins-x.rocks: dial tcp: lookup bdd-nh-1582613884.**-cb-kubecd-bdd-nh-1582613884-pr-1.c**d4.bdd.jenkins-x.rocks on 10.23.240.10:53: no such host, delaying for: 20.917101179s
+WARNING: preview application http://bdd-nh-1582613884.**-cb-kubecd-bdd-nh-1582613884-pr-1.c**d4.bdd.jenkins-x.rocks not available, error was Get http://bdd-nh-1582613884.**-cb-kubecd-bdd-nh-1582613884-pr-1.c**d4.bdd.jenkins-x.rocks: dial tcp: lookup bdd-nh-1582613884.**-cb-kubecd-bdd-nh-1582613884-pr-1.c**d4.bdd.jenkins-x.rocks on 10.23.240.10:53: no such host, delaying for: 13.194462387s
+WARNING: preview application http://bdd-nh-1582613884.**-cb-kubecd-bdd-nh-1582613884-pr-1.c**d4.bdd.jenkins-x.rocks not available, error was Get http://bdd-nh-1582613884.**-cb-kubecd-bdd-nh-1582613884-pr-1.c**d4.bdd.jenkins-x.rocks: dial tcp: lookup bdd-nh-1582613884.**-cb-kubecd-bdd-nh-1582613884-pr-1.c**d4.bdd.jenkins-x.rocks on 10.23.240.10:53: no such host, delaying for: 51.254294248s
+WARNING: preview application http://bdd-nh-1582613884.**-cb-kubecd-bdd-nh-1582613884-pr-1.c**d4.bdd.jenkins-x.rocks not available, error was Get http://bdd-nh-1582613884.**-cb-kubecd-bdd-nh-1582613884-pr-1.c**d4.bdd.jenkins-x.rocks: dial tcp: lookup bdd-nh-1582613884.**-cb-kubecd-bdd-nh-1582613884-pr-1.c**d4.bdd.jenkins-x.rocks on 10.23.240.10:53: no such host, delaying for: 1m21.006476584s
+WARNING: preview application http://bdd-nh-1582613884.**-cb-kubecd-bdd-nh-1582613884-pr-1.c**d4.bdd.jenkins-x.rocks not available, error was Get http://bdd-nh-1582613884.**-cb-kubecd-bdd-nh-1582613884-pr-1.c**d4.bdd.jenkins-x.rocks: dial tcp: lookup bdd-nh-1582613884.**-cb-kubecd-bdd-nh-1582613884-pr-1.c**d4.bdd.jenkins-x.rocks on 10.23.240.10:53: no such host, delaying for: 1m23.985007543s
+WARNING: preview application http://bdd-nh-1582613884.**-cb-kubecd-bdd-nh-1582613884-pr-1.c**d4.bdd.jenkins-x.rocks not available, error was Get http://bdd-nh-1582613884.**-cb-kubecd-bdd-nh-1582613884-pr-1.c**d4.bdd.jenkins-x.rocks: dial tcp: lookup bdd-nh-1582613884.**-cb-kubecd-bdd-nh-1582613884-pr-1.c**d4.bdd.jenkins-x.rocks on 10.23.240.10:53: no such host, delaying for: 54.814859278s
+Preview application is now available at: http://bdd-nh-1582613884.**-cb-kubecd-bdd-nh-1582613884-pr-1.c**d4.bdd.jenkins-x.rocks
